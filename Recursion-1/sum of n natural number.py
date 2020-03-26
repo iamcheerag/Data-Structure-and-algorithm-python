@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+    # -*- coding: utf-8 -*-
 """
 Created on Sat Mar 14 17:54:14 2020
 
@@ -12,7 +12,7 @@ def sumOfNaturalNumbers(n):
     smallOutput = sumOfNaturalNumbers(n-1)  # induction step donot think about this.
     return n + smallOutput
 
-sumOfNaturalNumbers(10)
+sumOfNaturalNumbers(3)
 
 
 def sumofNaturalNumberWithoutRecursion(n):
