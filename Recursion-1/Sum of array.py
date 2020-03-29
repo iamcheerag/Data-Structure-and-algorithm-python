@@ -29,3 +29,16 @@ def sumArray(a):
 a = [1,2,3,4,5,6]
 sumArray(a)
 
+
+==================================================================
+
+def sumOfList(a,n):
+    if n == 1 or n == 0:
+        return n
+    
+    smallList = sumOfList(a,n-1)
+    return a[n-1] + smallList
+
+a = [1,2,3,4,5]
+sumOfList(a,5)
+
