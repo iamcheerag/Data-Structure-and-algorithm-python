@@ -10,7 +10,7 @@ def binarySearch(arr,start,end,searchElement):
     if start > end :
         return -1
     
-    mid = ( start + end )//2
+    mid = (start + end )//2
     
     if searchElement == arr[mid]:
         print('Element found at ', mid)

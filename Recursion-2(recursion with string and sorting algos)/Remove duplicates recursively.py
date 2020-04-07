@@ -31,3 +31,22 @@ def removeConsecutiveDuplicates(s):
 # Main
 string = input().strip()
 print(removeConsecutiveDuplicates(string))
+
+
+#==================================================
+
+def removeConsecutiveDuplicate(s):
+    
+    if len(s)==0 or len(s) ==1:
+        return s
+    
+    smallList = removeConsecutiveDuplicate(s[1:])
+    #print(smallList)
+    
+    if s[0] == s[1]:
+        return smallList
+    else:
+        return s[0] + smallList
+    
+    
+print(removeConsecutiveDuplicate('ccccc'))
