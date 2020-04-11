@@ -119,3 +119,13 @@ arr1=list(int(i) for i in input().strip().split(' '))
 n2=int(input())
 arr2=list(int(i) for i in input().strip().split(' '))
 arrayIntersection(arr1, arr2)
+
+
+
+
+
+
+
+ a= input()
+ b= input()
+ c= input()
