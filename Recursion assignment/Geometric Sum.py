@@ -20,3 +20,8 @@ def GpSum(n):
 n = int(input())
 result = GpSum(n)
 print("%.5f"%result)
+
+
+
+
+
