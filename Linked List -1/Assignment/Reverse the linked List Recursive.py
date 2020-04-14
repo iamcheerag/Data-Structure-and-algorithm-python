@@ -24,23 +24,13 @@ def createLL(arr):
     return head
 
 def reverseLLR(head):
-    if head.next is None:
-        return
+    if head is None:
+        return head
     
     reverseLLR(head.next)
+    print(head.data,end = " ")
     
-    print(head.data,end=" ")
-    return 
-
-def printLL(head):
-    current = head
-    while current is not None:
-        print(current.data,end= " ")
-        current = current.next
-        
         
 arr = [int(x) for x in input().split()]
 head = createLL(arr[:-1])
 reverseLLR(head)
-head = reverseLLR(head)
-printLL(head)
