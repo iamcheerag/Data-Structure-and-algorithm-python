@@ -5,33 +5,73 @@ Created on Sat Mar 28 20:13:40 2020
 @author: cheerag.verma
 """
 
-def checkAB(s,si):
-    l = len(s)
-    if si == l or si == l-1: #base case
+     
+def checkAB(s)  :
+    
+    if len(s) == 0:
         return True
-
-    if s[si] == "a" :
-       if (s[si+1] == "a" or s[si+1] == " ") :
-           return checkAB(s,si+1)
-       elif (s[si+1] =="b" and s[si+2] == "b"):
-           return checkAB(s,si+2)
-       else:
-           return False
-      
-    if s[si] == "b":
-        if s[si+1] == " " or s[si+1] == "a":
-            return checkAB(s,si+1)
+    
+    if len(s) == 1:
+        if s[0] == 'a':
+            return True
         else:
             return False
-        
+    
+    if len(s) ==2:
+        if s[0] == 'a' and s[1] == 'a':
+            return True
+        else:
+            return False
+    
+    if len(s)>2:
+        if s[0] == 'a' and s[1] == 'b' and s[2] =='b':  #induction hypothesis
+            smallresult = checkAB(s[3:])
+        elif s[0] == "a" and s[1] == "a":
+            smallresult = checkAB(s[1:])
+        else:
+            return False
+        return smallresult
 
-s = "ab"
-if s[0] == 'a' or " ":
-    result = checkAB(s,0)
-    if result:
-        print("true")
-    else:
-        print("false")
+s= "abb"
+result = checkAB(s)
+if result:
+    print("true")
 else:
     print("false")
         
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
