@@ -45,11 +45,8 @@ def linearSearchRecursive(head,n,si):
             else:
                 return -1
             
-        if head.data == n:
-            return si
-        else:
-            smallOutput = linearSearchRecursive(head.next,n,si+1)
-            return smallOutput
+        smallOutput = linearSearchRecursive(head.next,n,si+1)
+        return smallOutput
 
 def ll(arr):
     if len(arr)==0:
