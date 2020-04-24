@@ -22,7 +22,7 @@ class StackUsingLL:
     def pop(self):
         if self.isEmpty() is True:
             return 0
-        data = self.__head
+        data = self.__head.data
         self.__head = self.__head.next
         self.__size = self.__size - 1
         return data
@@ -30,7 +30,7 @@ class StackUsingLL:
     def top(self):
         if self.isEmpty() is True:
             return 0
-        data = self.__head
+        data = self.__head.data
         return data
     # Return 0 if stack is empty. Don't display any other message
     def isEmpty(self):
