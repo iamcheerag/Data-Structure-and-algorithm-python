@@ -13,7 +13,7 @@ class Queue:
     def enQueue(self,data):
         self.input.append(data)
         self.rear = self.rear +1
-        return self.input
+        #return self.input
         
         
     def deQueue(self):
