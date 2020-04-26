@@ -59,7 +59,7 @@ def NodesGreaterThanX(root,x):
     return leftCount + rightCount +count
 
 root = takeInput()
-result = NodesGreaterThanX(root,6,0)
+result = NodesGreaterThanX(root,6)
 print(result)
 
     
