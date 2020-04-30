@@ -37,6 +37,7 @@ def isBalanced(root):
     
     leftTreeHeight = heightOfBT(root.left)
     rightTreeHeight = heightOfBT(root.right)
+    
     if leftTreeHeight-rightTreeHeight>1 or rightTreeHeight-leftTreeHeight>1:
         return False
     

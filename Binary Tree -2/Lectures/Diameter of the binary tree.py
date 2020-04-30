@@ -56,13 +56,28 @@ def diameterOfBinaryTree(root):
     rh = heightOfBinaryTree(root.right)
     
     option1 = lh + rh
-    #print(option1)
     option2 = diameterOfBinaryTree(root.left)
+    print(option2)
     option3 = diameterOfBinaryTree(root.right)
-    print(option1,option2,option3)
-    return max(option1,option2,option3)
+    print(option3)
+    return max(1+option1,option2,option3)
+
+
+def diameterOfBinaryTreeOptimized(root):
+    if root == None:
+        return 0,0
     
+    leftTreeDia,Lheight = diameterOfBinaryTreeOptimized(root.left)
+    rightTreeDia,Rheight = diameterOfBinaryTreeOptimized(root.right)
     
+    h = 1 + max(Lheight,Rheight)
+    
+
+    return max(leftTreeDia,rightTreeDia),h
+
 
 root = takeInput()
 print(diameterOfBinaryTree(root))
+#print(diameter,height)
+#h,d = diameterOfBinaryTreeOptimized(root)
+#print(d)

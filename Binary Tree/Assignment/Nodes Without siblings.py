@@ -29,15 +29,12 @@ def takeInput():
 def nodesWithoutSibling(root):
     if root is None:
         return 
-    #print("root.data",root.data)
     if root.left !=None and root.right == None:
-        #print("root.left",root.left.data)
-        return root.left.data
+        print(root.left.data)
     elif root.left == None and root.right!=None:
-        result = root.right.data
-        nodesWithoutSibling(root.right)
-        return result
-        
+        print(root.right.data)
+     
+    
     nodesWithoutSibling(root.left)
     nodesWithoutSibling(root.right)
     

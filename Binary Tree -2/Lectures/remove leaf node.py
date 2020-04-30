@@ -44,8 +44,8 @@ def printTree(root):
     if root.right is not None:
         print("R:",root.right.data,end="")
     print()
-    leftTree = printTree(root.left)
-    rightTree = printTree(root.right)
+    printTree(root.left)
+    printTree(root.right)
     
     
     
