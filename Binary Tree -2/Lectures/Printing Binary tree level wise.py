@@ -61,17 +61,17 @@ def printBinaryTreeLevelwise(root):
         root = q.get()
         print(root.data,end=":")
         if root.left is not None:
-            print("L:",root.left.data,end=",")
+            print("L:"+str(root.left.data),end=",")
             q.put(root.left)
         if root.left is None:
-            print("L:",-1,end=",")
+            print("L:"+str(-1),end=",")
             
         if root.right is not None:
-            print("R:",root.right.data)
+            print("R:"+str(root.right.data))
             q.put(root.right)
             
         if root.right is None:
-            print("R:",-1)
+            print("R:"+str(-1))
             
 root = takeInputLevelwise()
 #printBinaryTreePreOrder(root)
