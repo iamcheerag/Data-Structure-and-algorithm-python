@@ -27,7 +27,7 @@ class BinaryTree:
 import queue
 def takeInputLevelOrder():
     q = queue.Queue()
-    rootData = int(input("Enter root:"))
+    rootData = int(input("Enter root"))
     if rootData == -1:
         return 
     
@@ -51,36 +51,37 @@ def takeInputLevelOrder():
             
     return root
 
-def minMax(root,minData,maxData):
+INT_MIN = -2147483648
+INT_MAX = 2147483647
+def minMax(root):
     if root is None:
-        return
-
-    minData,maxData = minMax(root.left)
-    minData,maxData = minMax(root.right)
+        return INT_MIN,INT_MAX
+    minData = root.data
+    maxData = root.data
     
     if root.left is not None:
         leftData = root.left.data
-        if leftData <= minData:
-            global minData 
+        if leftData <=minData:
             minData = leftData
-            
         
         elif leftData >= maxData:
-            global maxData
             maxData = leftData
             
     if root.right is not None:
         rightData = root.right.data
         if rightData <= minData:
-            global minData 
             minData = rightData
         
         elif rightData >=maxData:
-            global maxData 
             maxData = rightData
-        
-    return minData,maxData
-
+            
+    minDataLeftTree1,maxDataRightTree1 = minMax(root.left)
+    minDataLeftTree2,maxDataRightTree2 = minMax(root.right)
+    minValue = min(minDataLeftTree1,minDataLeftTree2,minData)
+    maxValue = max(maxDataRightTree1,maxDataRightTree2,maxData)
+    
+    return minValue,maxValue
+    
         
 root = takeInputLevelOrder()
 minData ,maxData = minMax(root)
