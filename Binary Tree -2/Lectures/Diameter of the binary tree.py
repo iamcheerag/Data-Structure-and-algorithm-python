@@ -57,9 +57,9 @@ def diameterOfBinaryTree(root):
     
     option1 = lh + rh
     option2 = diameterOfBinaryTree(root.left)
-    print(option2)
+    #print(option2)
     option3 = diameterOfBinaryTree(root.right)
-    print(option3)
+    print(option3,option2)
     return max(1+option1,option2,option3)
 
 
