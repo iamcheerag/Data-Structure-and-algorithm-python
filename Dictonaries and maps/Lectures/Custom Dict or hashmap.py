@@ -18,7 +18,6 @@ class Map:
     def __init__(self):
         self.bucketSize= 10
         self.bucket = [None for i in range(self.bucketSize)]
-        
         self.count = 0
         
     
@@ -35,6 +34,7 @@ class Map:
                 head.value = value
                 return 
             head = head.next
+        
         head = self.bucket[index]   # new node will be inserted from the front, so after coming out of the while loop this should point again back to bucket[index]
         newNode = MapNode(key,value)
         newNode.next = head
@@ -67,6 +67,7 @@ class Map:
                     self.bucket[index] = head.next
                 else:
                     prev.next = head.next
+                
                 self.count-=1
                 return head.value
             prev = head

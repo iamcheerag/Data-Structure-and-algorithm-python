@@ -45,55 +45,81 @@ If two sequences are of equal length then return the sequence starting with the 
 """
     
     
-inputArr = [1,2,3,4,6,7,8,9]    
-numDict = {}
-numDict = numDict.fromkeys(inputArr, True)
-startNum = 0
+#inputArr =[2,12,9,16,10,5,3,20,25,11,1,8,6]
+#inputArr = [7,8,9,6,5,12,1,2]
+#inputArr = [-2,-3,-1,-5,10,6,7,8]
+#inputArr = [9,3,2,7,8,10,5,4]
+#inputArr = [3,7,2,1,9,8]
 
-lenOfSq = 0
 
-for element in inputArr:
-    tempLenOfSq = 0
-    
-    if numDict[element] == True:
-        numDict[element] = False
-        tempLenOfSq+=1
-        
-        if startNum == 0:
-            startNum = element
-        elif startNum > element:
-            startNum = element
-        
-        tempStart = element
-        
-        num = element+1
-        while num in numDict and numDict[num] == True:
-            numDict[num] = False
-            tempLenOfSq+=1
-            tempStart = num
-            num+=1
-        
-        numBackward = element-1
-        while numBackward in numDict and numDict[numBackward] == True:
-            numDict[numBackward] = False
-            tempStart = numBackward
-            tempLenOfSq+=1
-            numBackward-=1
-            
-        if tempLenOfSq > lenOfSq:
-            lenOfSq = tempLenOfSq
-            
-            if tempStart < startNum:
-                startNum = tempStart
-            
+#startIndex = 0
 
-        elif tempLenOfSq == lenOfSq:
-            startNum = inputArr[min(inputArr.index(element),inputArr.index(startNum))]
+
+
+def longestConsecutiveSq(inputArr):
+    freqDict = {}
+    freqDict = freqDict.fromkeys(inputArr, True)
+    length = 0
+    startIndex = 0
+    for element in inputArr:
+        tempLength = 0
+        tempStart = 0
+        if freqDict[element] == True:
+            freqDict[element] = False
+            tempLength +=1
+            tempStart = element
             
-        #print(startNum,lenOfSq)
-        #startNum = element
-    
-print(startNum,lenOfSq)
-for result in range(startNum,startNum+lenOfSq):
-    print(result)
+            #moving forward
+            forwardElement = element+1
+            while forwardElement in freqDict:
+                freqDict[forwardElement] = False
+                tempLength+=1
+                forwardElement+=1
                 
+            
+            #moving backward
+            backwardElement = element-1
+            while backwardElement in freqDict:
+                freqDict[backwardElement] = False
+                tempLength+=1
+                tempStart = backwardElement
+                backwardElement-=1
+            
+            if tempLength > length:
+                length = tempLength
+                startIndex = tempStart
+            
+            
+            elif tempLength == length:
+                tempStartIndexInActualArray = inputArr.index(tempStart)
+                startIndexInActualArray = inputArr.index(startIndex)
+                startIndex = inputArr[min(tempStartIndexInActualArray,startIndexInActualArray)]
+                
+    
+    
+    for data in range(startIndex,startIndex+length):
+        print(data)
+
+
+
+inputArr = [int(x) for x in input().split(" ")]
+longestConsecutiveSq(inputArr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

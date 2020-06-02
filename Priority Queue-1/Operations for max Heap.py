@@ -22,9 +22,10 @@ class maxPriorityQueue:
     
     def __percolateUp(self):  # or upHeapify
         childIndex  = self.getSize()-1
-        parentIndex = (childIndex-1)//2
+        
         
         while childIndex > 0:
+            parentIndex = (childIndex-1)//2
             if self.pq[childIndex].priority > self.pq[parentIndex].priority:
                 self.pq[childIndex], self.pq[parentIndex] = self.pq[parentIndex], self.pq[childIndex]
                 childIndex = parentIndex
@@ -76,15 +77,19 @@ class maxPriorityQueue:
     
 
 maxPq = maxPriorityQueue()
-maxPq.insert(3,3)
+maxPq.insert(10,10)
 maxPq.insert(4,4)
-maxPq.insert(63,63)
-maxPq.insert(21,21)
 maxPq.insert(9,9)
-print(maxPq.getMax())
-print(maxPq.removeMax())
-maxPq.insert(7, 7)
-print(maxPq.getMax())
-print(maxPq.removeMax())
-print(maxPq.getMax())
+maxPq.insert(16,16)
+maxPq.insert(12,12)
+maxPq.insert(8,8)
+for i in range(6):
+    print(maxPq.removeMax())
+#print(maxPq.getMax())
+# print(maxPq.getMax())
+# print(maxPq.removeMax())
+# maxPq.insert(7, 7)
+# print(maxPq.getMax())
+# print(maxPq.removeMax())
+# print(maxPq.getMax())
 

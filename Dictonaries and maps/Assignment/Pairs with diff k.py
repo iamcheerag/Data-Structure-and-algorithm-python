@@ -41,38 +41,98 @@ Take difference as absolute.
 """
 
 
-arr =[]
-k = 0
-numDict = {}
+# arr =[]
+# k = 0
+# numDict = {}
 
-for data in arr:
-    if data in numDict:
-        numDict[data]+=1
-    else:
-        numDict[data]=1
+# for data in arr:
+#     if data in numDict:
+#         numDict[data]+=1
+#     else:
+#         numDict[data]=1
     
-for num in arr:
-    if k!=0:
-        flag = False
-        otherNum = num - k
-        if otherNum < 0:
-            flag = True
-            otherNum = k + num
+# for num in arr:
+#     if k!=0:
+#         flag = False
+#         otherNum = num - k
+#         if otherNum < 0:
+#             flag = True
+#             otherNum = k + num
         
-        if otherNum in numDict and numDict[otherNum]!=0:
-            loopCount = numDict[num] * numDict[otherNum]
-            for i in range(loopCount):
-                if flag:
-                    print(num,otherNum)
-                else:
-                    print(otherNum,num)
+#         if otherNum in numDict and numDict[otherNum]!=0:
+#             loopCount = numDict[num] * numDict[otherNum]
+#             for i in range(loopCount):
+#                 if flag:
+#                     print(num,otherNum)
+#                 else:
+#                     print(otherNum,num)
             
-            numDict[num] = 0
-            numDict[otherNum] = 0
-    else:
-        n = len(arr)
+#             numDict[num] = 0
+#             numDict[otherNum] = 0
+#     else:
+#         n = len(arr)
+#         count = (n-1)*(n)//2
+#         for i in range(count):
+#             print(num,num)
+#         break
+        
+
+ 
+    
+    
+
+inputArr = [-334, 108 ,35 ,-154 ,58, -185, 8 ,-111 ,-91 ,45]
+freqDict = {}
+freqDict = freqDict.fromkeys(inputArr, True)
+k = 243 
+d = {}
+
+for ele in inputArr:
+    if freqDict[ele] == True:
+        freqDict[ele] = False
+        target = ele - k
+        if target in inputArr and freqDict[ele] == True:
+            print(target, ele)
+            freqDict[target] = False
+            
+    elif k == 0:
+        for i in inputArr:
+            d[i] = d.get(i,0)+1
+        
+        n = d[max(d)]
         count = (n-1)*(n)//2
         for i in range(count):
-            print(num,num)
+            print(ele,ele)
         break
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
