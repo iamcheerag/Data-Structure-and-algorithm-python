@@ -24,34 +24,37 @@ NOTE: You have to return the length of longest subarray .
 	5
 """
  
-arr = [1]
-
-dataDict = {}
-digitSum = 0
-
-maxLen = 0
-
-if len(arr) == 1:
-    return 1
-for idx in range(len(arr)):
-
-    digitSum = digitSum + arr[idx]
+def subsetSum(arr):
+    dataDict = {}
+    digitSum = 0
+    maxLen = 0
     
-    if digitSum in dataDict:
-        start = dataDict[digitSum] 
-        end = idx
-        tempLen = end-start
-        
-        if tempLen > maxLen:
-            maxLen = tempLen
-            
-    if digitSum == 0 and arr[0]!=0:
-        tempLen = len(dataDict)
-        if tempLen > maxLen:
-            maxLen = tempLen+1
-            
-        
-        
-    dataDict[digitSum] = idx    
+    if len(arr) == 1 and arr[0]==0:
+        return 1
     
-print(maxLen)    
+    for idx in range(len(arr)):
+        digitSum = digitSum + arr[idx]
+
+        if digitSum in dataDict:
+            start = dataDict[digitSum] 
+            end = idx
+            tempLen = end-start
+
+            if tempLen > maxLen:
+                maxLen = tempLen
+        
+        else:
+            dataDict[digitSum] = idx 
+
+        if digitSum == 0 and arr[0]!=0:
+            tempLen = len(dataDict)
+            if tempLen > maxLen:
+                maxLen = tempLen+1
+
+    return maxLen  
+
+
+n=int(input())
+l=list(int(i) for i in input().strip().split(' '))
+finalLen= subsetSum(l)
+print(finalLen)
