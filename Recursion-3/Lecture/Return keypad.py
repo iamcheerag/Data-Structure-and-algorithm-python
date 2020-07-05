@@ -50,7 +50,6 @@ def keypad(n):
     result = []
     for data in char:
         for ele in smalloutput:
-            print(ele+"::"+data)
             result.append(ele+data)
         
     return result
