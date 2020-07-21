@@ -1,7 +1,7 @@
 [![Run on Repl.it](https://repl.it/badge/github/iamcheerag/Introduction-to-python)](https://repl.it/github/iamcheerag/Introduction-to-python)
 
-# Data-Structure-and-algorithm-python
-Implementation of Algorithm and Data Structure in python
+# Data-Structure-and-algorithm-python (More than 300 Questions and solutions)
+Implementation of Algorithm and Data Structure in python , A brillant course by <a href="https://classroom.codingninjas.com/app/invite/NWUYP">Coding Ninjas</a>
 <h2> Recursion</h2>
 </h2>Recursion is majorly divided into 3 parts : Recursion-1 (Recursion with list/array) Recursion-2 (Recursion with strings)
 Recursion-3(Mixed problems)</h2>
@@ -34,7 +34,7 @@ Recursion-3(Mixed problems)</h2>
 <h3> Recursion -3 </h3>
 <a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/staircase.py">Staircase problem</a><br/>
 <a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/Sum%20of%20digits%20(recursive).py">Sum of the digits of a number</a><br/>
-<a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/String%20to%20Integer.py">String to Integer</a><br/>
+<a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/String%20to%20Integer.py">String to Integer</a><br/> 
 <a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/Pair%20Star.py">Pair Star</a><br/>
 <a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/Multiplication%20(recursive).py">Multiplication using recursion</a><br/>
 <a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/Geometric%20Sum.py">Geometric Sum</a><br/>
