@@ -1,3 +1,5 @@
+## Read input as specified in the question.
+## Print output as specified in the question.
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,7 +7,28 @@ Created on Fri Jul 17 16:29:59 2020
 
 @author: Cheerag
 """
-import queue
+"""
+Given an undirected graph G(V, E) and two vertices v1 and v2(as integers), check if there exists any path between them or not. Print true or false.
+V is the number of vertices present in graph G and vertices are numbered from 0 to V-1.
+E is the number of edges present in graph G.
+    Input Format :
+    Line 1: Two Integers V and E (separated by space)
+    Next E lines : Two integers a and b, denoting that there exists an edge between vertex a and vertex b (separated by space)
+    Line (E+2) : Two integers v1 and v2 (separated by space)
+    Output Format :
+    true or false
+    Constraints :
+    2 <= V <= 1000
+    1 <= E <= 1000
+    0 <= v1, v2 <= V-1
+    Sample Input 1 :
+    4 4
+    0 1
+    0 3
+    1 2
+    2 3
+    1 3
+"""
 class Graph:
     def __init__(self,nVertices):
         self.nVertices = nVertices
@@ -15,46 +38,21 @@ class Graph:
         self.adjMatrix[v1][v2] = 1
         self.adjMatrix[v2][v1] = 1
     
-    def bfsHelper(self,v1,visitedArray):
-        q = queue.Queue()
-        q.put(v1)
-        visitedArray[v1] = True
-        
-        while not q.empty():
-            vertex = q.get()
-            
-            print(vertex,end=" ")
-            for col in range(self.nVertices):
-                if self.adjMatrix[vertex][col] == 1 and visitedArray[col] is False:
-                    q.put(col)
-                    visitedArray[col] = True
-    
-    def bfs(self):
-        visitedArray = [False for i in range(self.nVertices)]
-        for i in range(self.nVertices):
-            if visitedArray[i] is False:
-                self.bfsHelper(i,visitedArray)
-
-    def hasPath(self,v1,v2,visitedArray):
+    def hasPath(self,v1,v2,visitedArray):  #dfs implementation
         
         visitedArray[v1] = True
-        if self.adjMatrix[v1][v2] == 1: #direct edge
+        if self.adjMatrix[v1][v2] == 1 or self.adjMatrix[v2][v1] ==1 : #direct edge
             return True
         
         else:
             for col in range(self.nVertices):
                 if self.adjMatrix[v1][col] == 1 and visitedArray[col] is False:
+                    visitedArray[col] = True
                     ans = self.hasPath(col,v2,visitedArray)
-                    return ans
+                    if ans is True:
+                        return ans
             
-            return False  
-
-
-# g.addPath(0,1)
-# g.addPath(0,2)
-# g.addPath(2,3)
-# #g.bfs()
-
+        return False  
 
 
 vert , edge = list(map(int,input().split()))
@@ -65,7 +63,14 @@ for i in range(edge):
 
 for data in edges:
     g.addPath(data[0], data[1])
- 
-visitedArray = [False for i in range(4)]
-print(g.hasPath(edges[-1][0],edges[-1][1],visitedArray))
+
+str1=input().split()
+v1,v2=int(str1[0]),int(str1[1])
+visitedArray = [False for i in range(vert)]
+result = (g.hasPath(v1,v2,visitedArray))
+
+if result:
+    print("true")
+else:
+    print("false")
         
