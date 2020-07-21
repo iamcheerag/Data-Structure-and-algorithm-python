@@ -57,7 +57,12 @@ g.addPath(4, 5)
 # g.addPath(8, 7)
 #g.addPath(2,8)
 
-print(g.allConnectedComponent())
+ans = (
+       ag.allConnectedComponent())
 
-
+ans = [8,92,1,3,14,5]
+ans.sort()
+for data in ans:
+    print(data)
+    
             
