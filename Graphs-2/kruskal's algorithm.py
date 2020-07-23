@@ -24,7 +24,7 @@ def getParent(vertex,parentArray):
 
         
 def kruskal(nVertices,edgesArray):
-    parentArray = [i for i in range(vert)]
+    parentArray = [i for i in range(nVertices)]
     edgesArray = sorted(edgesArray,key = lambda x : x.wt) #sorting the array on the bases of weight
     count = 0 # to insert into n-1 edges 
     output = [] #array which contains MST
@@ -59,10 +59,12 @@ for i in range(edge):
     
 result = kruskal(vert,edgesArray)
 
-for edge in result:
-    if edge.v1 < edge.v2:
-        print(str(v1)," ",str(v2)," ",str(wt))
+for data in result:
+    if data.v1 < data.v2:
+        print(data.v1," ",data.v2," ",data.wt)
     else:
-        print(str(v2)," ",str(v1)," ",str(wt))
-
-
+        print(data.v2," ",data.v1," ",data.wt)
+        
+        
+        
+        
