@@ -39,4 +39,8 @@ Recursion-3(Mixed problems)</h2>
 <a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/Multiplication%20(recursive).py">Multiplication using recursion</a><br/>
 <a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/Geometric%20Sum.py">Geometric Sum</a><br/>
 <a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/Count%20zero.py">Count zero in given Interger</a><br/>
-<a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/Check%20Palindrome%20(recursive).py">Check if a given String S is palindrome or not /a><br/>
+<a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Recursion%20assignment/Check%20Palindrome%20(recursive).py">Check if a given String S is palindrome or not </a><br/>
+
+<h3> Linked List </h3>
+<a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Linked%20List%20-1/Lectures/LinkedListOperationIterative.py">Linked List operation <b>Iterative</b> </a><br/>
+<a href = "https://github.com/iamcheerag/Data-Structure-and-algorithm-python/blob/master/Linked%20List%20-1/Lectures/LinkedListOperationRecursive.py">Linked List operation <b>Recursive</b> </a></br>
