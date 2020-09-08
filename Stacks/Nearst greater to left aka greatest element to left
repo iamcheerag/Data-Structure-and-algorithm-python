@@ -1,22 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Sep  7 17:02:00 2020
+Created on Tue Sep  8 09:50:43 2020
 
 @author: Cheerag
 """
 
-'''
-Foundation Code
-'''
 def nearestGreaterToRight(arr):
     '''
-    arr[]  : 3 7 6  9 10
-    result : 7 9 9 10 -1
+    arr[]  :  3 7 6  9 10
+    result : -1 3 7 -1 -1
     '''
     stack  = []
     result = []
-    for ele in range(len(arr)-1,-1,-1):
+    for ele in range(len(arr)):
         if len(stack) == 0:
             result.append(-1)
             stack.append(arr[ele])
@@ -36,5 +33,4 @@ def nearestGreaterToRight(arr):
     return result
 
 arr = list(map(int,input().split()))
-reversedArr = nearestGreaterToRight(arr)
-print(reversedArr[::-1])
+print(nearestGreaterToRight(arr))
