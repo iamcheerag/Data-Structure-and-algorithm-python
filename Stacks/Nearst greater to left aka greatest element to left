@@ -6,7 +6,7 @@ Created on Tue Sep  8 09:50:43 2020
 @author: Cheerag
 """
 
-def nearestGreaterToRight(arr):
+def nearestGreaterToleft(arr):
     '''
     arr[]  :  3 7 6  9 10
     result : -1 3 7 -1 -1
@@ -33,4 +33,4 @@ def nearestGreaterToRight(arr):
     return result
 
 arr = list(map(int,input().split()))
-print(nearestGreaterToRight(arr))
+print(nearestGreaterToleft(arr))
